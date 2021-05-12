@@ -12,13 +12,13 @@ namespace TestBTC
 		{
 			if (args?.Length != 1)
 			{
-				Console.WriteLine("Need private the key as an argument (hex sha256 format).");
+				Console.WriteLine("Need the private key as an argument (hex sha256 format).");
 				return;
 			}
 
 			var privateKey = args[0];
 
-			var btc = new BitcoinWallletGenerator();
+			var btc = new BitcoinWalletGenerator();
 			var pubKey = btc.GetPublicKey(privateKey);
 			var walletAddress = btc.GetWalletAddress(pubKey);
 
@@ -37,7 +37,7 @@ namespace TestBTC
 		}
 	}
 
-	class BitcoinWallletGenerator
+	class BitcoinWalletGenerator
 	{
 		private const string base58Chars = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 
